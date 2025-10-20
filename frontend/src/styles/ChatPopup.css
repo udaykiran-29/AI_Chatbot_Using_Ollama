@@ -1,0 +1,202 @@
+.chat-icon {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  background-color: #657b7d;
+  color: #fff;
+  padding: 15px;
+  border-radius: 50%;
+  cursor: pointer;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  z-index: 999;
+  transition: all 0.3s ease;
+}
+@keyframes bounce {
+  0%, 100% {
+    transform: translateY(0);   /* original position */
+  }
+  50% {
+    transform: translateY(-10px); /* move up */
+  }
+}
+
+.chat-icon:hover {
+  background-color: #7d6765;  
+  animation: bounce 0.6s infinite; /* bounce effect */
+}
+/* --- MAIN CHAT POPUP --- */
+.chat-popup {
+  position: fixed;
+  bottom: 20px;             /* kept from 1st */
+  right: 20px;
+  width: 350px;             /* from 2nd */
+  max-width: 500px;         /* kept from 1st */
+  min-width: 300px;         /* kept from 1st */
+  height: auto;             /* reset since we’re using max-height */
+  max-height: 500px;        /* from 2nd */
+  min-height: 400px;        /* kept from 1st */
+  background: #fff;
+  border-radius: 15px;      /* kept from 1st for smoother design */
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3); /* stronger shadow from 1st */
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  z-index: 1000;
+  transition: all 0.3s ease-in-out;
+}
+/* --- RESPONSIVE BREAKPOINTS --- */
+@media (max-width: 1024px) { /* Tablets */
+  .chat-popup {
+    width: 40vw;
+    height: 70vh;
+  }
+}
+
+@media (max-width: 768px) { /* Small tablets / landscape phones */
+  .chat-popup {
+    width: 60vw;
+    height: 70vh;
+    bottom: 15px;
+    right: 15px;
+  }
+}
+
+@media (max-width: 480px) { /* Mobile phones */
+  .chat-popup {
+    width: calc(100vw - 20px);
+    height: 85vh;
+    bottom: 10px;
+    right: 10px;
+  }
+}
+
+/* --- HEADER --- */
+.chat-header {
+  background: #657b7d;
+  color: #fff;
+  padding: 20px 10px;
+  text-align: center;
+  font-weight: bold;
+  font-size: 1.1rem;
+  line-height: 1.4;
+  word-wrap: break-word;
+  box-sizing: border-box;
+  position: relative;
+}
+
+.close-btn {
+  position: absolute;
+  top: 6px;
+  right: 20px;
+  font-size: 2.0rem;
+  background: transparent;
+  border: none;
+  color: #fff;
+  cursor: pointer;
+  z-index: 10;
+}
+
+.close-btn:hover {
+  color: #ccc;
+}
+
+/* --- BODY --- */
+.chat-body {
+  flex: 1;
+  padding: 10px;
+  overflow-y: auto;
+  background: #f9f9f9;
+}
+
+/* --- INPUT SECTION --- */
+.chat-input {
+  display: flex;
+  padding: 10px;
+  border-top: 1px solid #ddd;
+  background: #fff;
+}
+
+.chat-input input {
+  flex: 1;
+  padding: 8px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+.chat-input button {
+  margin-left: 8px;
+  padding: 8px 12px;
+  background: #657b7d;
+  color: #fff;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+/* --- OTHER SECTIONS --- */
+.bot-icon { margin-right: 6px; }
+
+.suggestions {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  margin-top: 10px;
+}
+
+.suggestion-btn {
+  background-color: white;
+  color: #000000;
+  border-radius: 10px;
+  font-size: 10px;
+  font-family: "Century Gothic", "Times New Roman", Times, serif;
+  padding: 12px;
+  font-weight: bold;
+  text-align: left;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+  border: none;
+}
+
+.feedback-section { text-align: center; margin: 1rem 0; }
+.feedback-question { font-weight: bold; margin-bottom: 0.5rem; }
+
+.feedback-btn {
+  margin: 0 5px;
+  padding: 6px 12px;
+  border-radius: 8px;
+  border: none;
+  cursor: pointer;
+  font-weight: bold;
+}
+.feedback-btn.yes,
+.feedback-btn.no { background-color: #7A5CFA; color: white; }
+
+.contact-form {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  margin-top: 10px;
+}
+.contact-form input,
+.contact-form textarea {
+  padding: 8px;
+  border-radius: 6px;
+  border: 1px solid #ccc;
+  font-size: 14px;
+}
+.contact-form button {
+  align-self: flex-start;
+  padding: 6px 12px;
+  background-color: #7A5CFA;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+}
+
+.input-error {
+  color: #e74c3c;
+  font-size: 0.8em;
+  text-align: left;
+  margin: -8px 0 10px 5px;
+}
