@@ -33,7 +33,7 @@ This chatbot analyzes user queries, checks previous issue history, fetches relev
 ---
 ## 📁 Folder Structure
 
-
+```
 AI_Chatbot_Using_Ollama/
 │
 ├── frontend/
@@ -57,7 +57,7 @@ AI_Chatbot_Using_Ollama/
 │
 └── README.md
 
-
+```
 
 ---
 
