@@ -85,7 +85,7 @@ npm install
 📌 Backend Environment Setup (.env)
 Create a .env file in backend/ with the following:
 
-
+```
 MYSQL_HOST=localhost
 MYSQL_USER=root
 MYSQL_PASSWORD=yourpassword
@@ -105,6 +105,8 @@ CREATE TABLE issues (
   query TEXT,
   status VARCHAR(50) DEFAULT 'pending'
 );
+
+```
 
 💾 Redis Setup
 
@@ -134,13 +136,13 @@ ollama pull nomic-embed-text
 📚 PDF Embedding Setup
 
 Place your knowledge base PDFs inside:
-
+```
 backend/data/
-
+```
 On backend start, LangChain will automatically vectorize PDFs and store them in:
-
+```
 backend/vector_store/
-
+```
 
 ▶️ Run the Project
 
@@ -162,9 +164,10 @@ npm start
 
 📡 API Endpoints
 Method	Endpoint	Description
+```
 POST	/api/chat	Send prompt to AI chatbot
 POST	/api/feedback	Store user feedback and trigger email via EmailJS
 POST	/api/issues	Log unresolved issue in MySQL
 GET	/api/issues	Fetch unresolved issues
-
+```
 
